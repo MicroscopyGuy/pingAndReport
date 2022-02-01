@@ -1,2 +1,2 @@
 # pingAndReport
-pings google and reports various metric to console, .txt file and attached screen
+pings google and reports various metrics to console, .txt file and attached screen
