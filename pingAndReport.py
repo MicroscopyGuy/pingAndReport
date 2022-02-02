@@ -91,7 +91,7 @@ def monitorAndLog():
                     print(results)
                     display.lcd_display_string((results[0][5:22]).ljust(20, " "), 1)
                     display.lcd_display_string(("max:{} pl: {}".format(results[3], results[4])), 2)
-                    display.lcd_display_string( ("avg:{} jitter:{}".format(results[2], results[5])), 3)
+                    display.lcd_display_string( ("avg:{} jter:{}".format(results[2], results[5])), 3)
                     display.lcd_display_string("********************", 4)
                    
                     events.append(results)
