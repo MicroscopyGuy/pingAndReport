@@ -3,7 +3,7 @@ import icmplib
 import importlib.util
 import sys
 sys.path.append("/home/pi/lcd")
-import drivers
+import drivers #https://github.com/the-raspberry-pi-guy/lcd
 import math
 
 spec = importlib.util.spec_from_file_location("drivers", "/home/pi/lcd")
@@ -22,26 +22,12 @@ def displayToScreen(displayName, msgLine1, msgLine2):
     displayName.lcd_display_string(msgLine1, 1)
     display.lcd_display_string(msgLine2, 2)
 
-def findDownString(time1, time2):
-    retString = ""
-    
-    if (not (time1[5] == time2[5])) or (not (time1[6] == time2[6])):
-        return (time1[5:19] + " " + time2[5:19])
-
-    for index in range(5,22):
-        if time1[index] == time2[index]:
-            retString += time1[index]
-        else:
-            return (retString + time1[index]+"_" + time2[index:21])
-    return ""
-
 def ping(website):
     timeNow = datetime.today()
     
     res = icmplib.ping(website, 200, 0, 1)
     timeNow = datetime.today()
     return ([str(timeNow), res.min_rtt, res.avg_rtt, res.max_rtt, res.packet_loss, res.jitter])    
-    #return ([str(timeNow), -1, -1, -1, -1])
 
 def monitorAndLog():
     #logFile = open(str(fileName),'a')
