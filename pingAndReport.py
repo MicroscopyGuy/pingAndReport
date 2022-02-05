@@ -14,7 +14,7 @@ logFile = open(str(fileName), 'w')
 #configures file name as netLogFileDateTime
 
 avgPingThreshold = 12.0
-maxPingThreshold = 50.0
+maxPingThreshold = 100.0
 packetLossThreshold = 0.01
 
 target = 'google.com' #The location to whose connection is being tested
